@@ -46,9 +46,9 @@ const messagesContainer = document.getElementById("messages");
 
  function output(input) {
   
-   // привести все к нижнему регистру
+   // привести все к нижнему регистру,обрезки конечных пробелов
  
-   let text = input.toLowerCase();
+   let text = input.toLowerCase().trim();
 
    
  
@@ -168,7 +168,7 @@ const botReplies = [
      "Хотите еще?",
    ],
 
-   ["Хорошо,тогда до следующего раз!"],
+   ["Хорошо,тогда до следующего раза!"],
 
    ["Пока Пока","Давай,Бро!"],
  ]
