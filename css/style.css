@@ -1,0 +1,245 @@
+* {
+   box-sizing: border-box;
+}
+
+a {
+
+   text-decoration: none;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   background-color: #EBF4F8;
+   height: 100vh;
+   font-family: 'Roboto', sans-serif;
+   font-size: 14px;
+   line-height: 16px;
+   letter-spacing: 0.03em;
+   font-size: 14px;
+
+}
+
+
+/*=========================================================*/
+
+.page {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+}
+
+.chat-block {
+   position: relative;
+   width: 100%;
+   max-width: 375px;
+   padding: 40px 20px;
+   height: 600px;
+   display: flex;
+   flex-direction: column;
+   justify-content: end;
+   background: #fff;
+   border-radius: 12px;
+
+
+}
+
+.chat__head {
+   position: absolute;
+   width: 100%;
+   top: 0;
+   left: 0;
+   height: 50px;
+   z-index: 2;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 19px;
+   text-align: center;
+   letter-spacing: 0.02em;
+   text-transform: capitalize;
+   background-color: #fff;
+   border-radius: 12px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.messages {
+   display: flex;
+   flex-direction: column;
+   overflow-y: auto;
+   height: 450px;
+   width: 100%;
+   background-color: white;
+   padding: 15px;
+   margin-bottom: 15px;
+   border-radius: 10px;
+}
+
+
+/*---------------- Поле ввода сообщений ---------------*/
+
+.chat__input {
+   width: 100%;
+   max-width: 100%;
+   display: flex;
+   margin-top: 30px;
+}
+
+#userInput {
+   width: 100%;
+}
+
+.input-box {
+   width: 100%;
+   min-height: 50px;
+   border: none;
+   box-sizing: border-box;
+   width: 100%;
+   border-radius: 10px;
+   padding: 0 45px;
+   color: #fff;
+   background: #7D3DCF;
+   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.21);
+   border-radius: 20px;
+   outline: none;
+}
+
+.input-box::placeholder {
+   color: #fff;
+}
+
+/*----------------------------------------------------*/
+
+
+/*-------------------- Время -------------------------*/
+#chat-timestamp {
+   font-size: 12px;
+   line-height: 14px;
+   font-weight: 400;
+   text-align: center;
+   letter-spacing: 0.03em;
+   text-transform: uppercase;
+   margin-bottom: 25px;
+   color: #4A4A4A;
+}
+
+
+/*---------------------------------------------------*/
+
+.my-text {
+   display: flex;
+   justify-content: end;
+}
+
+.my-avatar {
+   margin-right: 0;
+   margin-left: 20px;
+   display: flex;
+   align-items: center;
+}
+
+.my-avatar img {
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+}
+
+.my-msg {
+   background: #7D3DCF;
+   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.21);
+   border-radius: 10px;
+   color: #fff;
+   padding: 15px;
+   margin: 10px 0;
+   max-width: 220px;
+}
+
+/*----------------------- вид сообщения бота ----------------------------*/
+
+
+
+.bot-text {
+   display: flex;
+   align-items: center;
+   margin: 15px 0;
+}
+
+.bot-avatar {
+   margin-right: 20px;
+}
+
+.bot-avatar img {
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+}
+
+.bot-msg {
+   width: auto;
+   max-width: 223px;
+   min-height: 50px;
+   background: #FFFFFF;
+   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.14);
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   padding: 15px;
+}
+
+/*---------------------------------------------------*/
+
+/*----------------------- вид сообщения загрузки ----------------------------*/
+
+
+.load-msg {
+   background: #FFFFFF;
+   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.14);
+   border-radius: 10px;
+   max-width: 220px;
+   min-height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   padding: 15px;
+   margin: 10px 0;
+}
+
+.load-msg span {
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: #C4C4C4;
+   margin-left: 7px;
+}
+
+.load-msg span:nth-of-type(1) {
+   animation: grey-circle 0.6s linear infinite;
+   animation-delay: 0.0s;
+}
+
+.load-msg span:nth-of-type(2) {
+   animation: grey-circle 0.6s linear infinite;
+   animation-delay: 0.2s;
+}
+
+.load-msg span:nth-of-type(3) {
+   animation: grey-circle 0.6s linear infinite;
+   animation-delay: 0.4s;
+}
+
+@keyframes grey-circle {
+   0% {
+      background: #C4C4C4;
+   }
+
+   100% {
+      background: #7D3DCF;
+
+   }
+}
+
+/*---------------------------------------------------*/
