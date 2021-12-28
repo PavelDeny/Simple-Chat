@@ -1,4 +1,3 @@
-
 //отображения времени первого сообщения
 function getTime() {
    let today = new Date();
@@ -42,7 +41,6 @@ const messagesContainer = document.getElementById("messages");
        output(input);
      }
    });
- 
 
  function output(input) {
   
@@ -50,16 +48,17 @@ const messagesContainer = document.getElementById("messages");
  
    let text = input.toLowerCase().trim();
 
-   
- 
    if (compare(userTexts, botReplies, text)) { 
      // поиск соответствия в `userTexts`
      finalResult = compare(userTexts, botReplies, text);
    } else {
      // если не находится подходящего ответа, бот выдает случайный ответ (альтернативный)
      finalResult = alternative[Math.floor(Math.random() * alternative.length)];
-   }
- 
+   };
+
+   if (text == "" ) {
+      finalResult = "Я не понимаю вас";
+   };
    // обновить элемент DOM
    addToChat(input, finalResult);
  }
@@ -67,6 +66,9 @@ const messagesContainer = document.getElementById("messages");
 
 // функция для сравнения ответа бота на текст пользователя
 function compare(userTexts, botReplies, text) { 
+   if (text != userTexts) {
+      reply = "Я не понимаю вас";
+    }
    for (let x = 0; x < userTexts.length; x++) {
      for (let y = 0; y < botReplies.length; y++){
        if (userTexts[x][y] == text) {
@@ -74,10 +76,11 @@ function compare(userTexts, botReplies, text) {
          console.log(botReplies[x][y])
          reply = replies[Math.floor(Math.random() * replies.length)];
        }
+       
      }
    }
    return reply;
- }
+ };
 
 
  function addToChat(input, finalResult) {
@@ -134,21 +137,20 @@ function compare(userTexts, botReplies, text) {
  
  }
 
- 
 
-//-----------------------------------Ответы-------------------------------------
-
-
+ //-----------------------------------Ответы-------------------------------------
 
 const userTexts = [
-   ["привет", "здравствуйте", "добрый день","hi"],
+   ["привет", "здравствуйте"],
 
-   ["хочу интересный факт", "что-то интересное пожалуйста", "следующий" , "еще"],
+   ["хочу интересный факт", "следующий"],
 
-   ["прикольно,спасибо","прикольно", "спасибо"],
-   ["нет", "в следующий раз", "не, потом"],
+   ["прикольно", "спасибо"],
+
+   ["да", "конечно", "этот был уже", "еще"],
+
+   ["нет", "в следующий раз"],
    
-
    ["пока"],
    
  ]
@@ -164,23 +166,31 @@ const botReplies = [
      "Самое высокое здание в Европе находится в Москве.",
      "Китайский язык является самым популярным в мире."
    ],
+   ["Хотите еще?"],
+   
    [
-     "Хотите еще?",
-   ],
+      "Страусы развивают скорость до 70 км в час.",
+      "Утки способны нырять на глубину до 6 метров.",
+      "Самая трудно излечимая фобия – боязнь страха.",
+      "Правое лёгкое человека вмещает больше воздуха, чем левое.",
+    ],
 
    ["Хорошо,тогда до следующего раза!"],
 
    ["Пока Пока","Давай,Бро!"],
  ]
+
+const botReplieOne = botReplies[1][Math.floor(Math.random() * botReplies[1].length)];
+const botReplieSecond = botReplies[3][Math.floor(Math.random() * botReplies[3].length)];
+
+  
    
 const alternative = [
    "Попробуй снова",
    "Слушаю...",
-   "Я не понимаю :/",
-   "Я не понимаю вас",
-   "Бро... :)"
+   "Я не понимаю :/"
  ]
 
-
+// ----------------------------------------------------------------------
 
 
